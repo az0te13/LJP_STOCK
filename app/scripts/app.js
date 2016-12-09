@@ -8,5 +8,24 @@
  *
  * Main module of the application.
  */
-angular
-  .module('stockljpApp', []);
+
+
+var stockljpApp = angular.module('stockljpApp', ['ngRoute']);
+
+// routes
+stockljpApp.config(function($routeProvider) {
+    $routeProvider
+ 
+        // route for the home page
+        .when('/', {
+            templateUrl : 'view/main.html',
+            controller  : 'MainCtrl'
+        })
+ 
+        // route for the materiel page
+        .when('/materiel', {
+            templateUrl : 'view/materiel.html',
+            controller  : 'MaterielCtrl'
+        });
+ 
+});
