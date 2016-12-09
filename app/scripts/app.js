@@ -18,14 +18,25 @@ stockljpApp.config(function($routeProvider) {
  
         // route for the home page
         .when('/', {
-            templateUrl : 'view/main.html',
+            templateUrl : 'views/main.html',
             controller  : 'MainCtrl'
         })
  
         // route for the materiel page
         .when('/materiel', {
-            templateUrl : 'view/materiel.html',
+            templateUrl : 'views/materiel.html',
             controller  : 'MaterielCtrl'
         });
  
 });
+
+// create the controller and inject Angular's $scope
+stockljpApp.controller('MainCtrl', function($scope) {
+    // create a message to display in our view
+    $scope.info = 'Welcome to Oodles';
+});
+ 
+stockljpApp.controller('MaterielCtrl', function($scope) {
+    $scope.info = 'About Oodles';
+});
+ 
