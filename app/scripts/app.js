@@ -12,6 +12,7 @@
 
 var stockljpApp = angular.module('stockljpApp', ['ngRoute']);
 
+
 // routes
 stockljpApp.config(function($routeProvider) {
     $routeProvider
@@ -26,17 +27,13 @@ stockljpApp.config(function($routeProvider) {
         .when('/materiel', {
             templateUrl : 'views/materiel.html',
             controller  : 'MaterielCtrl'
-        });
+        })
+
+        //.otherwise({
+        //    redirectTo: '/'
+        //})
+        ;
  
 });
 
-// create the controller and inject Angular's $scope
-stockljpApp.controller('MainCtrl', function($scope) {
-    // create a message to display in our view
-    $scope.info = 'Welcome to Oodles';
-});
- 
-stockljpApp.controller('MaterielCtrl', function($scope) {
-    $scope.info = 'About Oodles';
-});
  
